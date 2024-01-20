@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.9.0/dist/Draggable.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <title>Elkhair Sons</title>
+  </head>
+  <body>
+
+
+
+    <div class="hideMe">
+
+        <div class="row" >
+          <div class="col-md-6">
+            <div class="top-left-button"><img src="./assets/img/logo.png" width="60%"  alt=""></div>
+        
+          </div>
+          <div class="col-md-6">
+            <button class="top-right-button" id="toggleBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="39" height="17" viewBox="0 0 39 17" fill="none">
+                <path d="M0 8.5H29.5M0 15.5H15.5M0 1.5H39" stroke="white" stroke-width="2"/>
+                <path d="M0 8.5H29.5M0 15.5H15.5M0 1.5H39" stroke="white" stroke-width="2"/>
+              </svg>
+            </button>
+            
+            
+        </div>
+        </div>
+  
+        <div class="overlay" id="overlay">
+          <!--  -->
+          
+  
+          <nav class="slide-menu">
+  
+            <div >
+              <div class="top-left-button1"><img src="./assets/img/logo.png" width="60%"  alt=""></div>
+          
+         
+              <button class="top-right-button1 close-btn" id="closeBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M1 1L19 19M1 19L19 1" stroke="white" stroke-width="2"/>
+                </svg>
+              </button> 
+              
+          </div>
+            
+           <div class="navlinks">
+            <a href="index.html"><h3>Home</h3></a>
+            <a href="about.html"><h3>About Us</h3></a>
+            <a href="about.html#founder"><h3>About Founder</h3></a>
+            <a href="" id="servicesLink"><h3>Services</h3></a>
+            <a href="" id="brandsLink"><h3>Brands</h3></a>
+            <a href="career.html"><h3>Careers</h3></a>
+            <a href="latest.html"><h3>Latest Media</h3></a>
+            <a href="contact.html"><h3>Contact Us</h3></a>
+            </div>
+          </nav>
+        </div>
+      </div>
+       
+      
+      
+      <div class="slide-menu" id="brandsSlideMenu">
+  
+        <div >
+          <div class="top-left-button1"><img src="./assets/img/logo.png" width="60%"  alt=""></div>
+      
+     
+          <a href="">
+          <button class="top-right-button1 brandsCloseBtn" id="brandsCloseBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M1 1L19 19M1 19L19 1" stroke="white" stroke-width="2"/>
+            </svg>
+          </button> </a>
+          
+      </div>
+  
+        <!-- Add your content for Brands here -->
+        <div  style="text-align: left;">
+        
+        <a href="index.html#overlay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="20" viewBox="0 0 75 20" fill="none">
+            <line x1="74" y1="9" x2="3" y2="8.99999" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10.7071 1.70711C11.0976 1.31658 11.0976 0.683418 10.7071 0.292893C10.3166 -0.0976311 9.68342 -0.0976311 9.29289 0.292893L10.7071 1.70711ZM9.29289 0.292893L0.292893 9.29289L1.70711 10.7071L10.7071 1.70711L9.29289 0.292893Z" fill="white"/>
+            <line x1="10.5858" y1="18" x2="2" y2="9.41421" stroke="white" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <br> <br><br>
+        <a href="brands.html#kyro"><h3>Hospitality</h3></a>
+        <a href="brands.html#fume"><h3>Retail</h3></a>
+  
+      </div>
+        <!-- ... -->
+      </div>
+  
+  
+      <div class="slide-menu" id="servicesSlideMenu">
+  
+        <div >
+          <div class="top-left-button1"><img src="./assets/img/logo.png" width="60%"  alt=""></div>
+      
+     
+          <a href="">
+          <button class="top-right-button1 servicesCloseBtn" id="servicesCloseBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M1 1L19 19M1 19L19 1" stroke="white" stroke-width="2"/>
+            </svg>
+          </button> </a>
+          
+      </div>
+  
+        <!-- Add your content for Services here -->
+        <div  style="text-align: left;">
+        
+        <a href="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="20" viewBox="0 0 75 20" fill="none">
+            <line x1="74" y1="9" x2="3" y2="8.99999" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10.7071 1.70711C11.0976 1.31658 11.0976 0.683418 10.7071 0.292893C10.3166 -0.0976311 9.68342 -0.0976311 9.29289 0.292893L10.7071 1.70711ZM9.29289 0.292893L0.292893 9.29289L1.70711 10.7071L10.7071 1.70711L9.29289 0.292893Z" fill="white"/>
+            <line x1="10.5858" y1="18" x2="2" y2="9.41421" stroke="white" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <br> <br><br>
+        <a href=""><h3>Hospitality and Management</h3></a>
+        <a href=""><h3>Staff Training</h3></a>
+        <a href=""><h3>Operational Analysis & Improvement</h3></a>
+        <a href=""><h3>Concept & Menu Development</h3></a>
+        <a href=""><h3>Shisha Management</h3></a>
+        <a href=""><h3>Shisha Training & Staff</h3></a>
+        <a href=""><h3>Supplier of Exquisite Shisha Flavor</h3></a>
+        <a href=""><h3>Premium Catering</h3></a>
+  
+      </div>
+        <!-- ... -->
+      </div>
+      
+        
+          <!-- <h1>Vertical full-screen slider (GSAP 3)<span>mousewheel, nav dot, drag/throw &amp; arrow controls</span></h1>
+          <p class="navDotInfo">The nav dots also have hover tooltips.</p> -->
+          <!-- <svg id="downArrow" class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"> -->
+              <svg id="downArrow" class="arrow" xmlns="" viewBox="0 0 100 100">
+              <g stroke-linejoin="round" stroke-linecap="round" >
+                  <circle r="46" cx="50" cy="50" />
+                  <polyline points="25 40, 50 70, 75 40" ></polyline>
+              </g>
+          </svg>
+          <svg id="upArrow" class="arrow" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 100 100">
+              <g stroke-linejoin="round" stroke-linecap="round" >
+                  <circle r="46" cx="50" cy="50" />
+                  <polyline points="25 60, 50 30, 75 60" ></polyline>
+              </g>
+          </svg>
+            <div id="masterWrap">
+          <div id="panelWrap">
+
+            <section class="about1">
+                <div class="about1-container p-5" >
+                  <div class="row">
+                    <div class="col-md-6 order-md-2">
+                        <div class="carousel slide" data-ride="carousel" data-interval="3000" id="carousel1">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item"> <img class="d-block img-fluid w-100" src="https://i.imgur.com/K7A78We.jpg" alt="first slide">
+                                   
+                                </div>
+                                <div class="carousel-item active"> <img class="d-block img-fluid w-100" src="https://i.imgur.com/c8952Iz.jpg" data-holder-rendered="true">
+                                    
+                                </div>
+                                <div class="carousel-item"> <img class="d-block img-fluid w-100" src="https://i.imgur.com/K7A78We.jpg" data-holder-rendered="true">
+                                    
+                                </div>
+                            </div> 
+                            <!-- <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> -->
+                        </div>
+                      <div class="row" style="align-items: center;">
+                        <!-- <p style="color: white;">“Believe you can and you're halfway there.”  Theodore </p> -->
+                      </div>
+                    </div>
+              
+                    <div class="col-md-6 order-md-1">
+                      <!-- Text overlapping on the image -->
+                      <div class="about1-overlay-container">
+                        <div class="about1-overlay-text" >
+                            <br><br>
+                          <h2>ELEVATING HOSPITALITY <br>THROUGH EXPERT <br>MANAGEMENT AND <br>TRAINING</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="deets" style="overflow-y:auto;">
+                  <div class="row">
+                      <div class="col-md-6 v">
+                        <div class="row">
+                            <div class="mission1-container p-5  " >
+                                
+                                    <h2 >The Mission</h2>
+                                    <p style="color: white;" >
+                                      <span style="color: grey;">
+                                        At Elkair & Sons, our mission is to transform the hospitality industry by delivering unparalleled management solutions and empowering your staff with comprehensive training programs.
+                                      </span>
+                                      "WE STRIVE TO EXCEED EXPECTATIONS, UPHOLD HIGH STANDARDS, AND CREATE UNFORGETTABLE EXPERIENCES FOR BOTH GUESTS AND EMPLOYEES."
+                                    </p>
+                            </div>
+                                  
+                      </div>
+                      <div class="row">
+                        <div class="vision1-container p-5 " >
+                           
+                                <div class="vision1-text">
+                                    <h2>The Vision</h2>
+                                    <p style="color: white;"><span style="color: grey;">Our Vision is to be a recognized leader in hospitality, setting new standards of excellence in the industry. We strive to empower businesses with the knowledge, expertise, and resources needed to provide exceptional guest experiences</span>“OUR VISION IS TO INSPIRE AND NURTURE A CULTURE OF SERVICE EXCELLENCE,WHERE EVERY INTERACTION IS FILLED WITH WARMTH, PROFESSIONALISM,AND
+                                      ATTENTION TO DETAIL”</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                      </div>
+                     
+                      <div class="col-md-6">
+                        <div class="value-container " >
+                            <div class="value-heading">
+                              <div class="section-title d-flex justify-content-center align-items-center">
+                                6 things we value
+                              </div>
+                                
+                            </div>
+                            <div class="row d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="col-md-2">
+                                    <img src="./assets/img/goals/1.png" class="img-fluid" alt="v1">
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="./assets/img/goals/2.png" class="img-fluid" alt="v2">
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="./assets/img/goals/Group 24 (1).png" class="img-fluid" alt="v3">
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="col-md-2">
+                                    <img src="./assets/img/goals/4.png" class="img-fluid" alt="v4">
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="./assets/img/goals/5.png" class="img-fluid" alt="v5">
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="./assets/img/goals/Frame 2.png" class="img-fluid" alt="v6">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </section>
+              <section id="founder" style="width: 100vw;">
+                <div class="section-title">
+                    About Founder
+                </div>
+                <div class="">
+                    <br>
+                    <p style="max-width: 60vw;text-align: justify;">Peter Elkhair, the visionary founder of the leading hospitality consultancy Elkhair & Sons, is making waves in the industry with his two distinct brands—Kyro Lounge and Restaurant, a casual dinning haven and Fume a premium tobacco and hookah outlet. With a deep-rooted passion for redefining leisure experiences, Peter has established himself as an entrepreneurial force.
+<br><br>
+                        In the realm of hospitality, Peter's consultancy provides invaluable expertise to businesses aiming to enhance their offerings. His commitment to excellence is further evident in the success of Kryo Lounge and Restaurant, where avant-garde design meets curated culinary experiences, creating an ambiance that elevates each visit into a memorable occasion.
+                        <br><br>
+                        Expanding his portfolio, Peter introduced a premium tobacco and hookah outlet Fume, setting a new standard for leisure. Known for its exceptional selection of top-notch tobacco products and exquisite hookah designs, this establishment has swiftly become the destination for connoisseurs seeking the epitome of relaxation.
+                        <br><br>
+                        Peter Elkhair's journey is marked by relentless pursuit of excellence, innovation, and an unwavering dedication to delivering unparalleled hospitality experiences. As he continues to shape the industry landscape, each venture under his guidance stands as a testament to his passion for creating exceptional spaces and setting new benchmarks in luxury and leisure.</p>
+                </div>
+                <div  style="margin-left: 30%; max-width: 60vw;">
+
+                    <br><br>
+                    <p >PETER ELKHAIR</p>
+                </div>
+              </section>
+
+
+</div>
+</div>
+<div class="dots">
+</div>
+<!-- <div class="toolTips">
+  <div class="toolTip">
+      Home Page
+  </div>
+  <div class="toolTip">
+      Kyro
+  </div>
+  <div class="toolTip">
+      Fume
+  </div>
+  <div class="toolTip">
+      Clients
+  </div>
+  <div class="toolTip">
+      Gallery
+  </div>
+  <div class="toolTip">
+      Latest Media
+  </div>
+</div> -->
+</div>
+
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
