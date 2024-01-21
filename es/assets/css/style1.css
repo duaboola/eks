@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+
+body {
+    /* margin-top: 5%; */
+    background-color: #201F1F;
+  }
+
+
+  /* Add this rule to fix the issue with the content overlapping on the navbar */
+/* body > *:not(.navbar) {
+     position: relative; 
+    z-index: 1;
+} */
+
+  /* .navbar {
+    position: sticky;
+    top: 0;
+} */
+
+.section-title
+  {
+    color: #FFF;
+font-family: 'Lato', sans-serif;
+font-size: 3 rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 1.92px;
+  }
+
+/*----- Navbar -----*/
+.top-left-button,
+.top-right-button {
+  position: fixed;
+  top: 12px;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 100;
+  border: none;
+}
+
+.top-left-button {
+  left: 1%;
+  /* position: absolute; */
+  top: 1%;
+}
+
+.top-right-button {
+  right: 4%;
+  top: 4%;
+}
+
+.top-left-button1,
+.top-right-button1 {
+  position: absolute;
+  top: 12px;
+  padding: 0px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: -10;
+  border: none;
+}
+
+.top-left-button1 {
+  left: 0%;
+}
+
+.top-right-button1 {
+  right: 15px;
+  top: 4%;
+}
+
+@media (max-width:1200px)
+{
+  .top-left-button img,
+  .top-left-button1 img {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-left-button img,
+  .top-left-button1 img {
+    width: 30vw;
+  }
+
+  .top-left-button svg,
+  .top-left-button1 svg {
+    width: 8vw;
+  }
+
+  .section {
+    overflow: none;
+    height: 100%;
+  }
+}
+
+@media (max-width: 431px){
+  .top-right-button svg
+  {
+    /* width: 10vw; */
+    padding-bottom: 5px;
+  }
+
+  .top-left-button img,
+  .top-left-button1 img {
+    width: 30vw;
+  }
+}
+
+@media (max-width:281px)
+{
+  .top-left-button img {
+    width: 40vw;
+  }
+
+  .top-left-button1 img {
+    width: 40vw;
+  }
+}
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0; /* Initially positioned off-screen to the right */
+  width: 0%;
+  height: 100%;
+  background-color: #201F1F;
+  /* display: flex;
+  justify-content: center; 
+  align-items: center; */
+  transition: width 0.5s ease;
+  z-index: 999;
+  overflow: hidden; /* Hide the overflow initially */
+}
+
+.slide-menu {
+  width: 100%; /* Adjust the width as needed */
+  z-index: 1000;
+  overflow-y: auto;
+  text-align: center;
+  padding: 12%;
+  display: flex;
+  flex-direction: column; /* Set flex-direction to column */
+  justify-content: center;
+  align-items: center;
+}
+
+.navlinks {
+  padding-left: 12%;
+  padding-top: 4%;
+}
+
+.slide-menu h3 {
+  padding: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px;
+  color: #FFF;
+  text-align: start;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: lighter;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+@media (max-width:1200px)
+{
+  .navlinks 
+  {
+    padding-left: 12%;
+  padding-top: 12%;
+  }
+}
+
+@media(max-width:768px)
+{
+  .navlinks{
+    padding-left: 10%;
+  padding-top: 15%;
+  }
+}
+
+@media(max-width:400px)
+{
+  .navlinks{
+    padding-top: 20%;
+  }
+}
+
+.slide-menu h3:hover {
+  text-decoration: none;
+}
+
+.slide-menu a:hover {
+  text-decoration: none;
+}
+/*------ Brands -----*/
+#brandsSlideMenu {
+  width: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+  text-align: left;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #201F1F;
+}
+
+#brandsSlideMenu h3 {
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: lighter;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: left !important;
+  
+}
+
+/*------ services -----*/
+#servicesSlideMenu {
+  width: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+  text-align: left;
+  padding: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #201F1F;
+}
+
+#servicesSlideMenu h3 {
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: lighter;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: left !important;
+  
+}
+
+
+
+
+/* ----- Career ------*/
+.jumbotron {
+    color: white;
+    background-image: url("../img/career.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+  }
+  
+  .jumbotron h1 {
+    font-family: var(--font-poppins);
+    font-weight: bold;
+  }
+  
+  .jumbotron p{
+    font-family: var(--font-poppins);
+    letter-spacing: 4px;
+  }
+  
+  .job .rounded-rectangle {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 10%;
+    margin-top: 20px;
+    color: #fff;
+    text-align: start;
+  }
+  
+  @media (max-width:1200px) {
+    .jumbotron{
+      height: auto;
+    }
+  
+    .job h3 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  /* ---- Description -----*/
+
+  .desc {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh;  */
+  }
+  
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 10%;
+  }
+  
+  .desc h6 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .desc p {
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  /* Styling the unordered list */
+  .desc ul {
+    list-style: circle;
+    padding: 0;
+  }
+  
+  .desc li {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  .jobform h2 {
+      color: #FFF;
+  }
+
+  .jobform label {
+      color: #FFF;
+  }
+  
+/* ------ Contact Us -----*/
+.contact  h4, p, i, h6{
+color: #FFF;
+}
+
+.nav-link
+{
+    font-size: 18px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    text-align: center;
+    color: #D9D9D9;
+    margin-bottom: 30px;
+
+}
+
+.nav-link:hover
+{
+    font-size: 18px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #D9D9D9;
+
+}
+
+.btn-default{
+  background-color: white;
+    color: black;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #D9D9D9 !important;
+  color: black !important;
+}
+
+/* .nav-pills .nav-link .active {
+  background-color: #D9D9D9 !important;
+  color: white !important;
+} */
+.nav-pills .nav-item .nav-link:active {
+  background-color: #D9D9D9 !important;
+  color: white !important;
+}
+
+
+.nav-pills .nav-item .nav-link:focus {
+  background-color: #D9D9D9;
+  color: white;
+}
+
+.btn-default:hover 
+{
+    background-color: black;
+    color: white;
+}
+
+/* ------ Founder ------*/
+.founder{
+  text-align: center;
+
+}
+
+.founder p{
+  font-size: 1 rem;
+  /* max-width: 60vw !important; */
+  text-align: justify;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/* .founder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.section-title
+  {
+    color: #FFF;
+font-family: 'Lato', sans-serif;
+font-size: 3 rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 1.92px;
+  }
+
+  @media (max-width:768px){
+    .founder{
+      margin-top: 30%;
+    }
+  } 
