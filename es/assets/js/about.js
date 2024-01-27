@@ -1,5 +1,12 @@
 
-
+document.addEventListener("DOMContentLoaded", function () {
+  // Simulate the preloader duration (6 seconds)
+  setTimeout(function () {
+    document.body.classList.add("loaded");
+    // Remove the preloader element once loaded
+    document.querySelector('.preloader').remove();
+  }, 4000);
+});
   
   const colorArray = ["#201F1F", "#201F1F", "#201F1F", "#201F1F", "#201F1F", "#201F1F"];
   const slides = document.querySelectorAll("section");
