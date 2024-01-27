@@ -94,8 +94,8 @@ sectionTimeline.from(".fume .social-icons", { x: "-100%", opacity: 0, duration: 
 sectionTimeline.from(".fume .carousel-inner", { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
 
   // Animation for the about section
-  sectionTimeline.from(".about1 h2", { x: "-100%", opacity: 0, duration: 1 });
-  sectionTimeline.from(".about1 .carousel-inner", { x: "100%", opacity: 0, duration: 1 });
+  // sectionTimeline.from(".about1 h2", { x: "-100%", opacity: 0, duration: 1 });
+  // sectionTimeline.from(".about1 .carousel-inner", { x: "100%", opacity: 0, duration: 1 });
   
   
   // Animation for the deets section
