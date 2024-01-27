@@ -229,7 +229,7 @@ function animateSection(section) {
     timeline.from(section.querySelector('.g'), { y: "100%", opacity: 0, duration: 2 }, "-=0.5");
   } else if (section.classList.contains('latestmedia')) {
     // Animation for the Media section
-    timeline.from(section.querySelector('.latestmedia-container'), { y: "200%", opacity: 0, duration: 2 }, "-=0.5");
+    timeline.from(section.querySelector('.latestmedia-container'), { y: "100%", opacity: 0, duration: 2 }, "-=0.5");
   } else if (section.classList.contains('about1')) {
     // Animation for the about section
     timeline.from(section.querySelector('h2'), { x: "-100%", opacity: 0, duration: 0 });
