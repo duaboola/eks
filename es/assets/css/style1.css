@@ -47,6 +47,7 @@ letter-spacing: 1.92px;
   left: 1%;
   /* position: absolute; */
   top: 1%;
+  
 }
 
 .top-right-button {
@@ -72,7 +73,7 @@ letter-spacing: 1.92px;
 }
 
 .top-right-button1 {
-  right: 15px;
+  right: 4%;
   top: 4%;
 }
 
@@ -80,14 +81,14 @@ letter-spacing: 1.92px;
 {
   .top-left-button img,
   .top-left-button1 img {
-    width: 20vw;
+    width: 15vw;
   }
 }
 
 @media (max-width: 768px) {
   .top-left-button img,
   .top-left-button1 img {
-    width: 30vw;
+    width: 20vw;
   }
 
   .top-left-button svg,
@@ -293,7 +294,8 @@ letter-spacing: 1.92px;
   
   .jumbotron p{
     font-family: var(--font-poppins);
-    letter-spacing: 4px;
+    letter-spacing: 1px;
+    text-align: justify;
   }
   
   .job .rounded-rectangle {
@@ -433,8 +435,8 @@ color: #FFF;
   font-size: 1 rem;
   /* max-width: 60vw !important; */
   text-align: justify;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 /* .founder {

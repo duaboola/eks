@@ -45,10 +45,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Simulate the preloader duration (6 seconds)
   setTimeout(function () {
-      document.body.classList.add("loaded");
+    document.body.classList.add("loaded");
+    // Remove the preloader element once loaded
+    document.querySelector('.preloader').remove();
   }, 4000);
 });
-
 
 // console.clear();
 
@@ -151,31 +152,216 @@ gsap.set(this, {
 });
 }
 
-// Animation for the KYRO section
-sectionTimeline.from(".kyro h1", { x: "-100%", opacity: 0, duration: 1 });
-sectionTimeline.from(".kyro p", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
-sectionTimeline.from(".kyro .social-icons", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
-
-// Animation for the KYRO section images carousel
-sectionTimeline.from(".kyro .carousel-inner", { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+// sectionTimeline.from(".hero .carousel-inner", { x: "-100%", opacity: 0, duration: 3 } , "-=0.5");
 
 
-// Animation for the fume section
-sectionTimeline.from(".fume h1", { x: "-100%", opacity: 0, duration: 1 });
-sectionTimeline.from(".fume p", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
-sectionTimeline.from(".fume .social-icons", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+// // Animation for the KYRO section
+// sectionTimeline.from(".kyro h1", { x: "-100%", opacity: 0, duration: 1 });
+// sectionTimeline.from(".kyro p", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+// sectionTimeline.from(".kyro .social-icons", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
 
-// Animation for the KYRO section images carousel
-sectionTimeline.from(".fume .carousel-inner", { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+// // Animation for the KYRO section images carousel
+// sectionTimeline.from(".kyro .carousel-inner", { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
 
-// Animation for the Team section
-sectionTimeline.from(".team .team-container", { y: "200%", opacity: 0, duration: 2 }, "-=0.5");
 
-// Animation for the Gallery section
-sectionTimeline.from(".gallery .gallery_product", { y: "200%", opacity: 0, duration: 2 }, "-=0.5");
+// // Animation for the fume section
+// sectionTimeline.from(".fume h1", { x: "-100%", opacity: 0, duration: 1 });
+// sectionTimeline.from(".fume p", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+// sectionTimeline.from(".fume .social-icons", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
 
-// Animation for the Media section
-sectionTimeline.from(".latestmedia .latestmedia-container", { y: "200%", opacity: 0, duration: 3 }, "-=0.5");
+// // Animation for the KYRO section images carousel
+// sectionTimeline.from(".fume .carousel-inner", { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+
+// // Animation for the Team section
+// sectionTimeline.from(".team .team-container", { y: "200%", opacity: 0, duration: 3, ease: "power4.out", delay: -0.5 });
+// // Animation for the Gallery section
+// sectionTimeline.from(".gallery .gallery_product", { y: "200%", opacity: 0, duration: 2 }, "-=0.5");
+
+// // Animation for the Media section
+// sectionTimeline.from(".latestmedia .latestmedia-container", { y: "200%", opacity: 0, duration: 3 }, "-=0.5");
+
+// // Animation for the about section
+// sectionTimeline.from(".about1 h2", { x: "-100%", opacity: 0, duration: 0 });
+// sectionTimeline.from(".about1 .carousel-inner", { x: "100%", opacity: 0, duration: 0 });
+
+
+// // Animation for the deets section
+// sectionTimeline.from(".deets h2", { x: "-100%", opacity: 0, duration: 1 });
+// sectionTimeline.from(".deets p", { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+// sectionTimeline.from(".deets img", { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+
+// Create an Intersection Observer for each section
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const section = entry.target;
+      animateSection(section);
+    }
+  });
+}, { threshold: 0.5 }); // Adjust threshold as needed
+
+// Observe each section
+document.querySelectorAll('section').forEach(section => {
+  sectionObserver.observe(section);
+});
+
+// Function to animate each section
+function animateSection(section) {
+  const timeline = gsap.timeline();
+  
+  // Animation for the section
+  if (section.classList.contains('kyro')) {
+    timeline.from(section.querySelector('h1'), { x: "-100%", opacity: 0, duration: 1 });
+    timeline.from(section.querySelector('p'), { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+    timeline.from(section.querySelector('.social-icons'), { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+    timeline.from(section.querySelector('.carousel-inner'), { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+  } else if (section.classList.contains('fume')) {
+    // Animation for the fume section
+    timeline.from(section.querySelector('h1'), { x: "-100%", opacity: 0, duration: 1 });
+    timeline.from(section.querySelector('p'), { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+    timeline.from(section.querySelector('.social-icons'), { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+    timeline.from(section.querySelector('.carousel-inner'), { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+  } else if (section.classList.contains('team')) {
+    // Animation for the Team section
+    timeline.from(section.querySelector('.team-container'), { y: "100%", opacity: 0, duration: 2 });
+  } else if (section.classList.contains('gallery')) {
+    // Animation for the Gallery section
+    timeline.from(section.querySelector('.g'), { y: "100%", opacity: 0, duration: 2 }, "-=0.5");
+  } else if (section.classList.contains('latestmedia')) {
+    // Animation for the Media section
+    timeline.from(section.querySelector('.latestmedia-container'), { y: "200%", opacity: 0, duration: 2 }, "-=0.5");
+  } else if (section.classList.contains('about1')) {
+    // Animation for the about section
+    timeline.from(section.querySelector('h2'), { x: "-100%", opacity: 0, duration: 0 });
+    timeline.from(section.querySelector('.carousel-inner'), { x: "100%", opacity: 0, duration: 0 });
+  } else if (section.classList.contains('deets')) {
+    // Animation for the deets section
+    timeline.from(section.querySelector('h2'), { x: "-100%", opacity: 0, duration: 1 });
+    timeline.from(section.querySelector('p'), { x: "-100%", opacity: 0, duration: 1 }, "-=0.5");
+    timeline.from(section.querySelector('img'), { x: "100%", opacity: 0, duration: 1 }, "-=0.5");
+  }
+}
+
+//  // Define the GSAP animations for each section
+//  function createSectionAnimation(sectionSelector, duration) {
+//   return gsap.from(sectionSelector, {
+//       opacity: 0,
+//       y: "20%",
+//       duration: duration,
+//       paused: true,
+//   });
+// }
+
+// // Animation for the KYRO section
+// var kyroAnimation = createSectionAnimation(".kyro", 1);
+
+// // Animation for the fume section
+// var fumeAnimation = createSectionAnimation(".fume", 1);
+
+// // Animation for the Team section
+// var teamAnimation = createSectionAnimation(".team", 2);
+
+// // Animation for the Gallery section
+// var galleryAnimation = createSectionAnimation(".gallery", 2);
+
+// // Animation for the Media section
+// var mediaAnimation = createSectionAnimation(".latestmedia", 3);
+
+// // Array of sections and their corresponding animations
+// var sections = [
+//   { section: document.querySelector(".kyro"), animation: kyroAnimation },
+//   { section: document.querySelector(".fume"), animation: fumeAnimation },
+//   { section: document.querySelector(".team"), animation: teamAnimation },
+//   { section: document.querySelector(".gallery"), animation: galleryAnimation },
+//   { section: document.querySelector(".latestmedia"), animation: mediaAnimation },
+// ];
+
+// // Function to check if a section is in the viewport
+// function isElementInViewport(element) {
+//   var rect = element.getBoundingClientRect();
+//   return (
+//       rect.top <= window.innerHeight / 2 &&
+//       rect.bottom >= window.innerHeight / 2
+//   );
+// }
+
+// // Function to check each section and trigger animations
+// function checkSections(entries, observer) {
+//   entries.forEach(function (entry) {
+//       if (entry.isIntersecting) {
+//           var section = entry.target;
+//           var animation = sections.find(item => item.section === section).animation;
+//           animation.play(); // Play the animation
+//           observer.unobserve(section);
+//       }
+//   });
+// }
+
+// // Create an Intersection Observer for each section
+// var observerOptions = {
+//   threshold: 0.5 // Adjust threshold as needed
+// };
+
+// sections.forEach(function (sectionInfo) {
+//   var section = sectionInfo.section;
+//   var animation = sectionInfo.animation;
+
+//   var observer = new IntersectionObserver(
+//       function (entries) {
+//           checkSections(entries, observer);
+//       },
+//       observerOptions
+//   );
+
+//   observer.observe(section);
+// });
+  // // Define the GSAP animations for each section
+  // function createSectionAnimation(sectionSelector, duration) {
+  //     return gsap.from(sectionSelector, {
+  //         opacity: 0,
+  //         y: "20%",
+  //         duration: duration,
+  //         paused: true,
+  //     });
+  // }
+
+  // // Animation for the KYRO section
+  // var kyroAnimation = createSectionAnimation(".kyro", 1);
+
+  // // Animation for the fume section
+  // var fumeAnimation = createSectionAnimation(".fume", 1);
+
+  // // Animation for the Team section
+  // var teamAnimation = createSectionAnimation(".team", 2);
+
+  // // Animation for the Gallery section
+  // var galleryAnimation = createSectionAnimation(".gallery", 2);
+
+  // // Animation for the Media section
+  // var mediaAnimation = createSectionAnimation(".latestmedia", 3);
+
+  // // Create an Intersection Observer for each section
+  // function createObserver(section, animation) {
+  //     var observer = new IntersectionObserver(
+  //         function (entries) {
+  //             entries.forEach(function (entry) {
+  //                 if (entry.isIntersecting) {
+  //                     animation.play(); // Play the animation
+  //                 }
+  //             });
+  //         },
+  //         { threshold: 0.5 } // Adjust threshold as needed
+  //     );
+  //     observer.observe(section);
+  // }
+
+  // // Observe each section
+  // createObserver(document.querySelector(".kyro"), kyroAnimation);
+  // createObserver(document.querySelector(".fume"), fumeAnimation);
+  // createObserver(document.querySelector(".team"), teamAnimation);
+  // createObserver(document.querySelector(".gallery"), galleryAnimation);
+  // createObserver(document.querySelector(".latestmedia"), mediaAnimation);
+
 
 
 // figure out which of the 4 nav controls called the function
@@ -301,7 +487,7 @@ catch(error) {
 
 /* -----------------Gallery ----------------*/
 $(document).ready(function() {
-  $(".filter-button").click(function() {
+  $(".filter-button").on('click touchstart', function() {
     var value = $(this).attr('data-filter');
 
     // Toggle the 'active' class
@@ -314,8 +500,9 @@ $(document).ready(function() {
   });
 
   // Set the initial filter to "kyro"
-  $(".filter-button[data-filter='kyro']").click();
+  $(".filter-button[data-filter='kyro']").trigger('click'); // Trigger the click event
 });
+
 
 
 /*----------- Animation -------------*/
@@ -434,6 +621,16 @@ function toggleMenu(link, slideMenu) {
   });
 }
 
+function toggleSlideMenu(slideMenu) {
+  if (slideMenu.style.transform === 'translateX(0%)') {
+    slideMenu.style.transform = 'translateX(100%)';
+    slideMenu.style.opacity = '0';
+  } else {
+    slideMenu.style.transform = 'translateX(0%)';
+    slideMenu.style.opacity = '1';
+  }
+}
+
 function closeMenus(exceptMenu) {
   if (exceptMenu !== brandsSlideMenu) {
     brandsSlideMenu.style.transform = 'translateX(100%)';
@@ -444,6 +641,11 @@ function closeMenus(exceptMenu) {
     servicesSlideMenu.style.transform = 'translateX(100%)';
     servicesSlideMenu.style.opacity = '0';
   }
+}
+
+function closeSlideMenu(slideMenu) {
+  slideMenu.style.transform = 'translateX(100%)';
+  slideMenu.style.opacity = '0';
 }
 
 // Toggle visibility for brands and services menus
@@ -495,8 +697,3 @@ function debounce(func, wait) {
 
 
 /*----- Animation -----*/
-
-
-
-
-
