@@ -477,7 +477,7 @@ body {
   line-height: normal;
   text-transform: capitalize;
   text-align: left !important;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 #servicesSlideMenu .row.p-3 {
@@ -497,9 +497,32 @@ body {
   }
 }
 
+@media (max-width:800px)
+{
+  #servicesSlideMenu h3{
+    font-size: smaller;
+  }
+
+  #servicesSlideMenu img {
+    width: 50%;
+  }
+
+  #servicesSlideMenu .serviceicons {
+    margin-top: 240px;
+  }
+}
+
 @media (max-width:400px) {
   #servicesSlideMenu h3{
     font-size: smaller;
+  }
+
+  #servicesSlideMenu img {
+    width: 50%;
+  }
+
+  #servicesSlideMenu .serviceicons {
+    margin-top: 240px;
   }
 }
 
@@ -799,6 +822,7 @@ line-height: normal;
 letter-spacing: 1.92px;
 text-transform: uppercase;
 text-align: left;
+margin-top: 10%;
 /* position: absolute;
   top: 8%;
   left: 20%;
@@ -829,6 +853,17 @@ text-align: left;
 
   .social-icons a {
     color: #fff;
+  }
+
+  @media (max-width: 290px){
+.k{
+  margin-top: 160px !important;
+  font-size: small;
+}
+
+.kp {
+  font-size: smaller;
+}
   }
 
  /* ------ Kyro  & fumw--------*/

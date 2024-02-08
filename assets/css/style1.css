@@ -271,16 +271,61 @@ letter-spacing: 1.92px;
   line-height: normal;
   text-transform: capitalize;
   text-align: left !important;
-  
+  padding-left: 20px;
 }
 
+#servicesSlideMenu .row.p-3 {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+#servicesSlideMenu .col-md-10.p-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align content vertically */
+}
+
+@media (max-width:1200px) {
+  #servicesSlideMenu h3{
+    padding-left: 20px;
+  }
+}
+
+@media (max-width:767px)
+{
+  #servicesSlideMenu h3{
+    font-size: smaller;
+  }
+
+   #servicesSlideMenu img {
+    width: 50%;
+  } 
+
+  #servicesSlideMenu .serviceicons {
+    margin-top: 1540px;
+  }
+} 
+
+@media (max-width:400px) {
+  #servicesSlideMenu h3{
+    font-size: smaller;
+  }
+
+  #servicesSlideMenu img {
+    width: 50%;
+  }
+
+  #servicesSlideMenu .serviceicons {
+    margin-top: 1540px;
+  }
+}
 
 
 
 /* ----- Career ------*/
 .jumbotron {
     color: white;
-    background-image: url("../img/career.jpg");
+    background-image: url("../img/c.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -893,5 +938,12 @@ letter-spacing: 1.92px;
 text-transform: uppercase;
 text-align: center;
 margin-bottom: 5%;
-margin-top: 10%;
+margin-top: 5%;
   }
+
+
+@media (max-width:  px){
+  .section-title1{
+    margin-top: 20%;
+  }
+}
