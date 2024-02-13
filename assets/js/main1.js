@@ -99,66 +99,49 @@ document.getElementById('toggleBtn').addEventListener('click', function() {
   
   
 
-  /* ---------- Job Filter -------*/
   document.addEventListener('DOMContentLoaded', function () {
     // Get filter elements
     var searchInput = document.getElementById('searchInput');
     var locationDropdown = document.getElementById('locationDropdown');
     var categoryDropdown = document.getElementById('categoryDropdown');
     var findButton = document.querySelector('.btn-outline-light'); // Use a class to identify the button
-  
+
     // Add event listener to the Find button
     findButton.addEventListener('click', function () {
-      filterJobs();
+        filterJobs();
     });
-  
+
     function filterJobs() {
         // Get filter values
-        var searchValue = searchInput.value.toLowerCase();
-        var locationValue = locationDropdown.value.toLowerCase();
-        var categoryValue = categoryDropdown.value.toLowerCase();
-      
+        var searchValue = searchInput.value.trim().toLowerCase();
+        var locationValue = locationDropdown.value.trim().toLowerCase();
+        var categoryValue = categoryDropdown.value.trim().toLowerCase();
+
         // Get all job listings
         var jobListings = document.querySelectorAll('.job .rounded-rectangle');
-      
-        // Flag to check if any listings match the filter criteria
-        var anyMatch = false;
-      
+
         // Loop through job listings and show/hide based on filter criteria
         jobListings.forEach(function (listing) {
-          var jobTitle = listing.querySelector('h3').innerText.toLowerCase();
-          var jobLocation = listing.querySelector('p').innerText.toLowerCase();
-          var jobCategory = listing.querySelector('.btn-outline-light').innerText.toLowerCase();
-      
-          // Check if the listing matches the filter criteria
-          var titleMatch = jobTitle.includes(searchValue);
-          var locationMatch = jobLocation.includes(locationValue);
-          var categoryMatch = categoryValue === 'all' || jobCategory === categoryValue;
-      
-          // Show or hide the listing based on filter criteria
-          if (titleMatch && locationMatch && categoryMatch) {
-            listing.style.display = 'block';
-            anyMatch = true; // At least one listing matched
-          } else {
-            listing.style.display = 'none';
-          }
+            var jobTitle = listing.querySelector('h3').innerText.trim().toLowerCase();
+            var jobLocation = listing.querySelector('p[data-location]').getAttribute('data-location').trim().toLowerCase();
+            var jobCategory = listing.querySelector('p[data-category]').getAttribute('data-category').trim().toLowerCase();
+
+            // Check if the listing matches the filter criteria
+            var titleMatch = jobTitle.includes(searchValue);
+            var locationMatch = locationValue === 'all' || jobLocation === locationValue;
+            var categoryMatch = categoryValue === 'all' || jobCategory === categoryValue;
+
+            // Show or hide the listing based on filter criteria
+            if (titleMatch && locationMatch && categoryMatch) {
+                listing.style.display = 'block';
+            } else {
+                listing.style.display = 'none';
+            }
         });
-      
-        // Display "No results found" message if no listings matched
-        if (!anyMatch) {
-          var noResultsMessage = document.createElement('div');
-          noResultsMessage.innerText = 'No results found';
-          noResultsMessage.classList.add('no-results-message'); // Optional: Add a class for styling
-          document.getElementById('jobListings').appendChild(noResultsMessage);
-        } else {
-          // Remove the "No results found" message if there were matches
-          var existingMessage = document.querySelector('.no-results-message');
-          if (existingMessage) {
-            existingMessage.remove();
-          }
-        }
-      }
-    })
+    }
+});
+
+
 
     //contact
 
